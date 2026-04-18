@@ -1,0 +1,2 @@
+# SiPEPE
+Sistem Pencatatan Penjualan
