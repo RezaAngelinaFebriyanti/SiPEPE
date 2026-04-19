@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Models\DetailPengirimanModel;
 
-class Barang extends Model
+class BarangModel extends Model
 {
     protected $table = 'barang';
     protected $primaryKey = 'id_barang';

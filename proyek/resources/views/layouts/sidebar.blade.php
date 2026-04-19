@@ -22,7 +22,7 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-header">Data Pengguna</li>
+          <li class="nav-header"></li>
           <li class="nav-item">
             <a href="{{ url('/toko') }}" class="nav-link {{ ($activeMenu == 'toko')? 'active' : '' }} ">
               <i class="nav-icon fas fa-layer-group"></i>
@@ -30,23 +30,11 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('/user') }}" class="nav-link {{ ($activeMenu == 'user')? 'active' : '' }}">
+            <a href="{{ url('/barang') }}" class="nav-link {{ ($activeMenu == 'barang')? 'active' : '' }}">
               <i class="nav-icon far fa-user"></i>
-              <p>Data User</p>
+              <p>Data Barang</p>
             </a>
           </li>
-          <li class="nav-header">Data Barang</li>
-          <li class="nav-item">
-            <a href="{{ url('/kategori') }}" class="nav-link {{ ($activeMenu == 'kategori')? 'active' : '' }} ">
-              <i class="nav-icon far fa-bookmark"></i>
-              <p>Kategori Barang</p>
-            </a>
-          </li>
-          <li class="nav-item">
-          <a href="{{ url('/barang') }}" class="nav-link {{ ($activeMenu == 'barang')? 'active' : '' }} ">
-            <i class="nav-icon far fa-list-alt"></i>
-            <p>Data Barang</p>
-          </a>
           <li class="nav-header">Data Transaksi</li>
           <li class="nav-item">
           <a href="{{ url('/stok') }}" class="nav-link {{ ($activeMenu == 'stok')? 'active' : '' }} ">

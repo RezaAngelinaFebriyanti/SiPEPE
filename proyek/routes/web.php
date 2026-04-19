@@ -31,6 +31,12 @@ Route::group(['prefix' => 'toko'], function () {
     Route::post("/list", [TokoController::class, 'list']); // menampilkan data toko dalam bentuk json untuk datatables
 });
 
+//Tabel Barang
+Route::group(['prefix' => 'barang'], function () {
+    Route::get('/', [BarangController::class, 'index']); // menampilkan halaman awal barang
+    Route::post("/list", [BarangController::class, 'list']); // menampilkan data barang dalam bentuk json untuk datatables
+});
+
 Route::get('/level', [LevelController::class, 'index']);
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/user', [UserController::class, 'index']);
@@ -98,6 +104,7 @@ Route::group(['prefix' => 'kategori'], function () {
 });
 
 //m_barang
+/*
 Route::group(['prefix' => 'barang'], function () {
     Route::get('/', [BarangController::class, 'index']); // menampilkan halaman awal barang
     Route::post("/list", [BarangController::class, 'list']); // menampilkan data barang dalam bentuk json untuk datatables
@@ -108,6 +115,7 @@ Route::group(['prefix' => 'barang'], function () {
     Route::put('/{id}', [BarangController::class, 'update']); // menyimpan perubahan data barang
     Route::delete('/{id}', [BarangController::class, 'destroy']); // menghapus data barang
 });
+*/
 
 //m_supplier
 Route::group(['prefix' => 'supplier'], function () {

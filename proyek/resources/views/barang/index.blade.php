@@ -1,4 +1,3 @@
-
 @extends('layouts.template')
 
 @section('content')
@@ -20,15 +19,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group row">
-                    <label for="kategori_id" class="col-1 control-label col-form-label">Filter:</label>
+                    <label for="id_barang" class="col-1 control-label col-form-label">Filter:</label>
                     <div class="col-3">
-                        <select name="kategori_id" id="kategori_id" class="form-control" required>
+                        <select name="id_barang" id="id_barang" class="form-control" required>
                             <option value="">- Semua -</option>
-                            @foreach ($kategori as $item)
-                                <option value="{{ $item->kategori_id }}">{{ $item->kategori_nama }}</option>
+                            @foreach ($barang as $item)
+                                <option value="{{ $item->id_barang }}">{{ $item->nama_barang }}</option>
                             @endforeach
                         </select>
-                        <small class="form-text text-muted">Kategori Barang</small>
+                        <small class="form-text text-muted">Data Barang</small>
                     </div>
                 </div>
             </div>
@@ -37,12 +36,9 @@
         <table class="table table-bordered table-hover table-sm" id="table_barang">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Kode Barang</th>
+                    <th>ID Barang</th>
                     <th>Nama Barang</th>
-                    <th>Harga Beli</th>
-                    <th>Harga Jual</th>
-                    <th>Kategori Barang</th>
+                    <th>Harga</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -64,41 +60,25 @@
                 dataType: "json",
                 type: "POST",
                 "data": function (d) {
-                    d.kategori_id = $('#kategori_id').val();
+                    d.id_barang = $('#id_barang').val();
                 }
             },
             columns: [
                 {
-                    data: "DT_RowIndex", // nomor urut dari laravel datatable addIndexColumn()
-                    className: "text-center",
-                    orderable: false,
-                    searchable: false
-                },
-                {
-                    data: "barang_kode",
+                    data: "id_barang",
                     className: "",
                     orderable: true,
                     searchable: true
                 },
                 {
-                    data: "barang_nama",
+                    data: "nama_barang",
                     className: "",
                     orderable: true,
                     searchable: true
                 },
                 {
-                    data: "harga_beli",
+                    data: "harga",
                     className: "",
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: "harga_jual",
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: "kategori.kategori_nama",
                     orderable: true,
                     searchable: true
                 },
@@ -109,7 +89,7 @@
                 }
             ]
         });
-        $('#kategori_id').on('change', function() {
+        $('#id_barang').on('change', function() {
             dataBarang.ajax.reload();
         });
     });
