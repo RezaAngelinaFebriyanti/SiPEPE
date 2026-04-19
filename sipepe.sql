@@ -70,7 +70,7 @@ CREATE TABLE retur (
 
 -- Tabel info_pengiriman
 CREATE TABLE info_pengiriman (
-    id_pengiriman_info INT AUTO_INCREMENT PRIMARY KEY,
+    id_pengiriman INT AUTO_INCREMENT PRIMARY KEY,
     id_toko INT NOT NULL,
     hari VARCHAR(10),
     jam_mulai TIME,
