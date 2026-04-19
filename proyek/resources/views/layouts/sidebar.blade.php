@@ -24,9 +24,9 @@
           </li>
           <li class="nav-header">Data Pengguna</li>
           <li class="nav-item">
-            <a href="{{ url('/level') }}" class="nav-link {{ ($activeMenu == 'level')? 'active' : '' }} ">
+            <a href="{{ url('/toko') }}" class="nav-link {{ ($activeMenu == 'toko')? 'active' : '' }} ">
               <i class="nav-icon fas fa-layer-group"></i>
-              <p>Level User</p>
+              <p>Data Toko</p>
             </a>
           </li>
           <li class="nav-item">

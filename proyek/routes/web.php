@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TokoController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\UserController;
@@ -22,6 +23,12 @@ use App\Http\Controllers\SupplierController;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+//Tabel Toko
+Route::group(['prefix' => 'toko'], function () {
+    Route::get('/', [TokoController::class, 'index']); // menampilkan halaman awal toko
+    Route::post("/list", [TokoController::class, 'list']); // menampilkan data toko dalam bentuk json untuk datatables
 });
 
 Route::get('/level', [LevelController::class, 'index']);
