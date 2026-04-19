@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\InfoPengirimanModel;
+use App\Models\InfoPenagihanModel;
 
 class TokoModel extends Model
 {
@@ -22,11 +24,11 @@ class TokoModel extends Model
 
     public function infoPengiriman()
     {
-        return $this->hasMany(InfoPengiriman::class, 'id_toko');
+        return $this->hasMany(InfoPengirimanModel::class, 'id_toko');
     }
 
     public function infoPenagihan()
     {
-        return $this->hasMany(InfoPenagihan::class, 'id_toko');
+        return $this->hasMany(InfoPenagihanModel::class, 'id_toko');
     }
 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\PengirimanController;
 use App\Http\Controllers\SupplierController;
 
 /*
@@ -35,6 +36,12 @@ Route::group(['prefix' => 'toko'], function () {
 Route::group(['prefix' => 'barang'], function () {
     Route::get('/', [BarangController::class, 'index']); // menampilkan halaman awal barang
     Route::post("/list", [BarangController::class, 'list']); // menampilkan data barang dalam bentuk json untuk datatables
+});
+
+//Tabel info_pengiriman
+Route::group(['prefix' => 'pengiriman'], function () {
+    Route::get('/', [PengirimanController::class, 'index']); // menampilkan halaman awal pengiriman
+    Route::post("/list", [PengirimanController::class, 'list']); // menampilkan data pengiriman dalam bentuk json untuk datatables
 });
 
 Route::get('/level', [LevelController::class, 'index']);
