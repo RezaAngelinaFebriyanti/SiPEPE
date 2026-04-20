@@ -21,7 +21,7 @@
                 <div class="form-group row">
                     <label for="id_toko" class="col-1 control-label col-form-label">Filter:</label>
                     <div class="col-3">
-                        <select name="id_toko" id="id_tok" class="form-control" required>
+                        <select name="id_toko" id="id_toko" class="form-control" required>
                             <option value="">- Semua -</option>
                             @foreach ($toko as $item)
                                 <option value="{{ $item->id_toko }}">{{ $item->nama_toko }}</option>
