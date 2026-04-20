@@ -2,7 +2,7 @@
 Saya sedang mengembangkan sebuah sistem untuk menunjang operasional UMKM Kerupuk Ananda Mojokerto.
 Pada sistem ini, saya telah mengimplementasikan **RESTFull API untuk autentikasi login** menggunakan Laravel dan JWT (JSON Web Token). Saya juga telah merancang & mengimplemetasikan database menggunakan MySQL, membuat data dummy menggunakan seeder
 
-## 🔐 RESTful API Authentication (JWT)
+## 🔐 RESTFull API Authentication (JWT)
 ### 📌 Endpoint Login
 - **Method**: POST  
 - **URL**: `/api/login`
