@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group row">
-                    <label for="kategori_id" class="col-1 control-label col-form-label">Filter:</label>
+                    <label for="id_toko" class="col-1 control-label col-form-label">Filter:</label>
                     <div class="col-3">
                         <select name="id_toko" id="id_tok" class="form-control" required>
                             <option value="">- Semua -</option>
