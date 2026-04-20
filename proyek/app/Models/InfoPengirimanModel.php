@@ -8,7 +8,7 @@ use App\Models\TokoModel;
 class InfoPengirimanModel extends Model
 {
     protected $table = 'info_pengiriman';
-    protected $primaryKey = 'id_pengiriman_info';
+    protected $primaryKey = 'id_pengiriman';
 
     protected $fillable = [
         'id_toko',

@@ -50,9 +50,9 @@
                 </a>
             </li>
           <li class="nav-item">
-          <a href="{{ url('/barang') }}" class="nav-link {{ ($activeMenu == 'penjualan')? 'active' : '' }} ">
+          <a href="{{ url('/DetailPengiriman') }}" class="nav-link {{ ($activeMenu == 'DetailPengiriman')? 'active' : '' }} ">
             <i class="nav-icon fas fa-cash-register"></i>
-            <p>Transaksi Penjualan</p>
+            <p>Data Pengiriman</p>
           </a>
           </li>
     </ul>

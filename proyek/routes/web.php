@@ -7,6 +7,7 @@ use App\Http\Controllers\TokoController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\PengirimanController;
 use App\Http\Controllers\PenagihanController;
+use App\Http\Controllers\DetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,12 @@ Route::group(['prefix' => 'pengiriman'], function () {
 Route::group(['prefix' => 'penagihan'], function () {
     Route::get('/', [PenagihanController::class, 'index']); // menampilkan halaman awal penagihan
     Route::post("/list", [PenagihanController::class, 'list']); // menampilkan data penagihann dalam bentuk json untuk datatables
+});
+
+//Tabel detail_pengiriman
+Route::group(['prefix' => 'DetailPengiriman'], function () {
+    Route::get('/', [DetailController::class, 'index']); // menampilkan halaman awal penagihan
+    Route::post("/list", [DetailController::class, 'list']); // menampilkan data penagihann dalam bentuk json untuk datatables
 });
 
 Route::get('/level', [LevelController::class, 'index']);

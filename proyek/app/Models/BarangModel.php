@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Models\DetailPengirimanModel;
+use App\Models\DetailPengirimanModel as ModelsDetailPengirimanModel;
 
 class BarangModel extends Model
 {
@@ -19,6 +20,6 @@ class BarangModel extends Model
 
     public function detailPengiriman()
     {
-        return $this->hasMany(DetailPengiriman::class, 'id_barang');
+        return $this->hasMany(ModelsDetailPengirimanModel::class, 'id_barang');
     }
 }

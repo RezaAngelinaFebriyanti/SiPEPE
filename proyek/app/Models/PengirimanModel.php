@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\TokoModel;
+use App\Models\DetailPengirimanModel;
 
-class Pengiriman extends Model
+class PengirimanModel extends Model
 {
     protected $table = 'pengiriman';
     protected $primaryKey = 'id_pengiriman';
@@ -20,12 +22,12 @@ class Pengiriman extends Model
 
     public function toko()
     {
-        return $this->belongsTo(Toko::class, 'id_toko');
+        return $this->belongsTo(TokoModel::class, 'id_toko');
     }
 
     public function detailPengiriman()
     {
-        return $this->hasMany(DetailPengiriman::class, 'id_pengiriman');
+        return $this->hasMany(DetailPengirimanModel::class, 'id_pengiriman');
     }
 
     public function pembayaran()
