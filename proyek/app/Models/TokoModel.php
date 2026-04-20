@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\InfoPengirimanModel;
 use App\Models\InfoPenagihanModel;
+use App\Models\PengirimanModel;
 
 class TokoModel extends Model
 {
@@ -19,7 +20,7 @@ class TokoModel extends Model
 
     public function pengiriman()
     {
-        return $this->hasMany(Pengiriman::class, 'id_toko');
+        return $this->hasMany(PengirimanModel::class, 'id_toko');
     }
 
     public function infoPengiriman()

@@ -8,6 +8,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\PengirimanController;
 use App\Http\Controllers\PenagihanController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,38 +21,44 @@ use App\Http\Controllers\DetailController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Login
+Route::get('login', [AuthController::class, 'login'])->name('login');
+Route::post('login', [AuthController::class, 'postlogin']);
 
-//Tabel Toko
-Route::group(['prefix' => 'toko'], function () {
-    Route::get('/', [TokoController::class, 'index']); // menampilkan halaman awal toko
-    Route::post("/list", [TokoController::class, 'list']); // menampilkan data toko dalam bentuk json untuk datatables
-});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
-//Tabel Barang
-Route::group(['prefix' => 'barang'], function () {
-    Route::get('/', [BarangController::class, 'index']); // menampilkan halaman awal barang
-    Route::post("/list", [BarangController::class, 'list']); // menampilkan data barang dalam bentuk json untuk datatables
-});
+    //Tabel Toko
+    Route::group(['prefix' => 'toko'], function () {
+        Route::get('/', [TokoController::class, 'index']); // menampilkan halaman awal toko
+        Route::post("/list", [TokoController::class, 'list']); // menampilkan data toko dalam bentuk json untuk datatables
+    });
 
-//Tabel info_pengiriman
-Route::group(['prefix' => 'pengiriman'], function () {
-    Route::get('/', [PengirimanController::class, 'index']); // menampilkan halaman awal pengiriman
-    Route::post("/list", [PengirimanController::class, 'list']); // menampilkan data pengiriman dalam bentuk json untuk datatables
-});
+    //Tabel Barang
+    Route::group(['prefix' => 'barang'], function () {
+        Route::get('/', [BarangController::class, 'index']); // menampilkan halaman awal barang
+        Route::post("/list", [BarangController::class, 'list']); // menampilkan data barang dalam bentuk json untuk datatables
+    });
 
-//Tabel info_penagihan
-Route::group(['prefix' => 'penagihan'], function () {
-    Route::get('/', [PenagihanController::class, 'index']); // menampilkan halaman awal penagihan
-    Route::post("/list", [PenagihanController::class, 'list']); // menampilkan data penagihann dalam bentuk json untuk datatables
-});
+    //Tabel info_pengiriman
+    Route::group(['prefix' => 'pengiriman'], function () {
+        Route::get('/', [PengirimanController::class, 'index']); // menampilkan halaman awal pengiriman
+        Route::post("/list", [PengirimanController::class, 'list']); // menampilkan data pengiriman dalam bentuk json untuk datatables
+    });
 
-//Tabel detail_pengiriman
-Route::group(['prefix' => 'DetailPengiriman'], function () {
-    Route::get('/', [DetailController::class, 'index']); // menampilkan halaman awal penagihan
-    Route::post("/list", [DetailController::class, 'list']); // menampilkan data penagihann dalam bentuk json untuk datatables
+    //Tabel info_penagihan
+    Route::group(['prefix' => 'penagihan'], function () {
+        Route::get('/', [PenagihanController::class, 'index']); // menampilkan halaman awal penagihan
+        Route::post("/list", [PenagihanController::class, 'list']); // menampilkan data penagihann dalam bentuk json untuk datatables
+    });
+
+    //Tabel detail_pengiriman
+    Route::group(['prefix' => 'DetailPengiriman'], function () {
+        Route::get('/', [DetailController::class, 'index']); // menampilkan halaman awal penagihan
+        Route::post("/list", [DetailController::class, 'list']); // menampilkan data penagihann dalam bentuk json untuk datatables
+    });
 });
 
 Route::get('/level', [LevelController::class, 'index']);
