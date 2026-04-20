@@ -1,6 +1,6 @@
 # SiPEPE ~ Sistem Pencatatan Penjualan
 Saya sedang mengembangkan sebuah sistem untuk menunjang operasional UMKM Kerupuk Ananda Mojokerto.
-Pada sistem ini, saya telah mengimplementasikan **RESTful API untuk autentikasi login** menggunakan Laravel dan JWT (JSON Web Token). Saya juga telah merancang & mengimplemetasikan database menggunakan MySQL, membuat data dummy menggunakan seeder
+Pada sistem ini, saya telah mengimplementasikan **RESTFull API untuk autentikasi login** menggunakan Laravel dan JWT (JSON Web Token). Saya juga telah merancang & mengimplemetasikan database menggunakan MySQL, membuat data dummy menggunakan seeder
 
 ## 🔐 RESTful API Authentication (JWT)
 ### 📌 Endpoint Login
