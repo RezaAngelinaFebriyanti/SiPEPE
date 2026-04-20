@@ -32,4 +32,4 @@ Berhasil mengakses data user menggunakan token
 
 ---
 ### 📌 Rancangan Database
-![SiPEPE](erd_sipepe.jng)
+![SiPEPE](erd_sipepe.jpg)
