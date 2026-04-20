@@ -7,10 +7,21 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 use App\Models\LevelModel;
+use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class UserModel extends Authenticatable
+class UserModel extends Authenticatable implements JWTSubject
 {
     use Notifiable;
+    use HasFactory;
+
+    public function getJWTIdentifier(){
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims(){
+        return [];
+    }
 
     protected $table = 'users';
 
