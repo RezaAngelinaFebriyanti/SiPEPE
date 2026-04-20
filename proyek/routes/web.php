@@ -1,15 +1,12 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TokoController;
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\LevelController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TokoController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\PengirimanController;
-use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\PenagihanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +39,12 @@ Route::group(['prefix' => 'barang'], function () {
 Route::group(['prefix' => 'pengiriman'], function () {
     Route::get('/', [PengirimanController::class, 'index']); // menampilkan halaman awal pengiriman
     Route::post("/list", [PengirimanController::class, 'list']); // menampilkan data pengiriman dalam bentuk json untuk datatables
+});
+
+//Tabel info_penagihan
+Route::group(['prefix' => 'penagihan'], function () {
+    Route::get('/', [PenagihanController::class, 'index']); // menampilkan halaman awal penagihan
+    Route::post("/list", [PenagihanController::class, 'list']); // menampilkan data penagihann dalam bentuk json untuk datatables
 });
 
 Route::get('/level', [LevelController::class, 'index']);

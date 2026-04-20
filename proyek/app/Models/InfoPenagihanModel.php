@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\TokoModel;
 
-class InfoPenagihan extends Model
+class InfoPenagihanModel extends Model
 {
     protected $table = 'info_penagihan';
     protected $primaryKey = 'id_penagihan';
@@ -20,6 +21,6 @@ class InfoPenagihan extends Model
 
     public function toko()
     {
-        return $this->belongsTo(Toko::class, 'id_toko');
+        return $this->belongsTo(TokoModel::class, 'id_toko');
     }
 }
